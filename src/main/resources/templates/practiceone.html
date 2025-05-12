@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 01</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Anderson Daniel Cango Samuisa</h1>
+    <h2>Metodologías Ágiles</h2>
+
+    <h3>Calculadora Básica</h3>
+    <form
+      th:action="@{/calculate}"
+      th:object="${calculatorForm}"
+      method="post"
+      class="calculator-form"
+    >
+      <main class="values">
+        <input type="number" step="any" th:field="*{a}" />
+        <select th:field="*{op}">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+        <input type="number" step="any" th:field="*{b}" />
+      </main>
+      <button type="submit">Calcular</button>
+      <h3>Resultado: <span th:text="${result}"></span></h3>
+    </form>
+
+    <h3>Palabras Palídromas</h3>
+    <h3>Cuadrado de un número</h3>
+    <h3>Verficación de número par</h3>
+  </body>
+</html>
