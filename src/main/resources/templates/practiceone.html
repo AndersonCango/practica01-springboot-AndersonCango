@@ -31,8 +31,15 @@
       <h3>Resultado: <span th:text="${result}"></span></h3>
     </form>
 
+    <h3>Verficación de número par</h3>
+    <form th:action="@{/pair}" method="post">
+      <main>
+        <input type="number" step="any" name="a" th:value="${a}" />
+        <span th:text="${pairResult}"></span>
+      </main>
+      <button type="submit">Verificar si es par</button>
+    </form>
     <h3>Palabras Palídromas</h3>
     <h3>Cuadrado de un número</h3>
-    <h3>Verficación de número par</h3>
   </body>
 </html>

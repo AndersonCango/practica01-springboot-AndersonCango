@@ -14,4 +14,8 @@ public class PracticeOneService {
             default -> throw new IllegalArgumentException("Operación no válida");
         };
     }
+
+    public String isPair(int a) {
+        return a % 2 == 0 ? "Es par" : "No es pár";
+    }
 }

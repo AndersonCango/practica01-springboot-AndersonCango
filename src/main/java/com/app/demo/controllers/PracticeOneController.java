@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 @Controller
 public class PracticeOneController {
 
-    private final PracticeOneService calculatorService;
+    private final PracticeOneService practiceOneService;
 
     public PracticeOneController(PracticeOneService service){
-        this.calculatorService = service;
+        this.practiceOneService = service;
     }
 
     @GetMapping("/")
@@ -29,12 +30,13 @@ public class PracticeOneController {
     
 
     @GetMapping("/practice-01")
-    public String practiceOne() {
+    public String practiceOne(Model model) {
+        model.addAttribute("calculatorForm", new Calculator());
         return "practiceone";
     }
 
     @PostMapping("/calculate")
-    public String calculate(@ModelAttribute("calculator") @Valid Calculator form,
+    public String calculate(@ModelAttribute("calculatorForm") @Valid Calculator form,
                             BindingResult result,
                             Model model) {
         model.addAttribute("calculatorForm", form);
@@ -44,8 +46,17 @@ public class PracticeOneController {
             return "practiceone";
         }
 
-        double value = calculatorService.calculate(form.getA(), form.getB(), form.getOp());
+        double value = practiceOneService.calculate(form.getA(), form.getB(), form.getOp());
         model.addAttribute("result", value);
+        return "practiceone";
+    }
+
+    @PostMapping("/pair")
+    public String isPair(@ModelAttribute("a") @Valid int a, Model model) {
+        model.addAttribute("calculatorForm", new Calculator());
+        model.addAttribute("a", a);
+        String value = practiceOneService.isPair(a);
+        model.addAttribute("pairResult", value);
         return "practiceone";
     }
 }
