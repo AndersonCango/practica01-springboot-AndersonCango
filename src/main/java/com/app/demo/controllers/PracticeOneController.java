@@ -12,6 +12,8 @@ import com.app.demo.models.Calculator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @Controller
@@ -59,4 +61,15 @@ public class PracticeOneController {
         model.addAttribute("pairResult", value);
         return "practiceone";
     }
+
+    @PostMapping("/square")
+    public String postMethodName(@ModelAttribute("firstNumber")@Valid int a, @ModelAttribute("secondNumber") @Valid int b, Model model) {
+        model.addAttribute("calculatorForm", new Calculator());
+        model.addAttribute("firstNumber", a);
+        model.addAttribute("secondNumber", b);
+        String result = practiceOneService.squareNumber(a, b);
+        model.addAttribute("squareResult", result);
+        return "practiceone";
+    }
+    
 }

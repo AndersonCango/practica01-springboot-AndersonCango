@@ -18,4 +18,12 @@ public class PracticeOneService {
     public String isPair(int a) {
         return a % 2 == 0 ? "Es par" : "No es par";
     }
+
+    public String squareNumber (int a, int b) {
+        if (a > b) {
+            return b * b == a ? a + " es cuadrado de " + b : a + " no es cuadrado de " + b;
+        } else {
+            return a * a == b ? b + " es cuadrado de " + a : b + " no es cuadrado de " + a;
+        }
+    }
 }
