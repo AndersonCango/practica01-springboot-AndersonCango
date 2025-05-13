@@ -26,4 +26,10 @@ public class PracticeOneService {
             return a * a == b ? b + " es cuadrado de " + a : b + " no es cuadrado de " + a;
         }
     }
+
+    public String isPalindrome(String a) {
+        String clean = a.replaceAll("[\\W_]", "").toLowerCase();
+        String reversed = new StringBuilder(clean).reverse().toString();
+        return reversed.equals(clean) ? a + " es palíndroma" : a + " no es palíndroma";
+    }
 }

@@ -12,7 +12,7 @@ import com.app.demo.models.Calculator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller
@@ -62,7 +62,7 @@ public class PracticeOneController {
     }
 
     @PostMapping("/square")
-    public String postMethodName(@ModelAttribute("firstNumber")@Valid int a, @ModelAttribute("secondNumber") @Valid int b, Model model) {
+    public String isSquare(@ModelAttribute("firstNumber")@Valid int a, @ModelAttribute("secondNumber") @Valid int b, Model model) {
         model.addAttribute("calculatorForm", new Calculator());
         model.addAttribute("firstNumber", a);
         model.addAttribute("secondNumber", b);
@@ -70,5 +70,15 @@ public class PracticeOneController {
         model.addAttribute("squareResult", result);
         return "practiceone";
     }
+
+    @PostMapping("/palindrome")
+    public String isPalindrome(@ModelAttribute("word")@Valid String word, Model model) {
+        model.addAttribute("calculatorForm", new Calculator());
+        model.addAttribute("word", word);
+        String result = practiceOneService.isPalindrome(word);
+        model.addAttribute("palindromeResult", result);
+        return "practiceone";
+    }
+    
     
 }

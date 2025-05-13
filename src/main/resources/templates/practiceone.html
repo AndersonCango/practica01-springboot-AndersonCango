@@ -59,5 +59,12 @@
       <button type="submit">Verificar si es cuadrado</button>
     </form>
     <h3>Palabras Palídromas</h3>
+    <form th:action="@{/palindrome}" method="post">
+      <main>
+        <input type="text" step="any" name="word" th:value="${word}" />
+        <span th:text="${palindromeResult}"></span>
+      </main>
+      <button type="submit">Verificar si es palíndroma</button>
+    </form>
   </body>
 </html>
