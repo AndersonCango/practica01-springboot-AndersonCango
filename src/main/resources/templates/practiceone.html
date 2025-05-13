@@ -35,9 +35,9 @@
 
       <section>
         <h3>Número par</h3>
-        <form th:action="@{/pair}" method="post">
+        <form th:action="@{/pair}" th:object="${pairForm}" method="post">
           <main>
-            <input type="number" step="any" name="a" th:value="${a}" />
+            <input type="number" step="any" th:field="*{number}" />
           </main>
           <button type="submit">Verificar</button>
           <h4><span th:text="${pairResult}"></span></h4>
@@ -46,20 +46,10 @@
 
       <section>
         <h3>Cuadrado de un número</h3>
-        <form th:action="@{/square}" method="post">
+        <form th:action="@{/square}" th:object="${squareForm}" method="post">
           <main>
-            <input
-              type="number"
-              step="any"
-              name="firstNumber"
-              th:value="${firstNumber}"
-            />
-            <input
-              type="number"
-              step="any"
-              name="secondNumber"
-              th:value="${secondNumber}"
-            />
+            <input type="number" step="any" th:field="*{firstNumber}" />
+            <input type="number" step="any" th:field="*{secondNumber}" />
           </main>
           <button type="submit">Verificar</button>
           <h4><span th:text="${squareResult}"></span></h4>
@@ -68,9 +58,13 @@
 
       <section>
         <h3>Palabras Palídromas</h3>
-        <form th:action="@{/palindrome}" method="post">
+        <form
+          th:action="@{/palindrome}"
+          th:object="${palindromeForm}"
+          method="post"
+        >
           <main>
-            <input type="text" step="any" name="word" th:value="${word}" />
+            <input type="text" step="any" th:field="*{word}" />
           </main>
           <button type="submit">Verificar</button>
           <h4><span th:text="${palindromeResult}"></span></h4>

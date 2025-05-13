@@ -7,5 +7,5 @@ import lombok.Data;
 public class Pair {
 
     @NotNull(message = "Ingrese un número")
-    private Integer a;
+    private Integer number;
 }
