@@ -67,4 +67,14 @@ public class PracticeOneControllerTest {
                 .andExpect(model().attribute("squareResult", "36 es cuadrado de 6"))
                 .andExpect(view().name("practiceone"));
     }
+
+    @Test
+    void testPalindrome() throws Exception {
+        when(practiceOneService.isPalindrome("ana")).thenReturn("ana es palíndroma");
+        mockMvc.perform(post("/palindrome")
+                .param("word", "ana"))
+                .andExpect(status().isOk())
+                .andExpect(model().attribute("palindromeResult", "ana es palíndroma"))
+                .andExpect(view().name("practiceone"));
+    }
  }

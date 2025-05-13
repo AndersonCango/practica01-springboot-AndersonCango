@@ -56,4 +56,14 @@ public class PracticeOneServiceTest {
     void testSquare() {
         assertEquals("8 no es cuadrado de 2", practiceOneService.squareNumber(8, 2));
     }
+
+    @Test
+    void testPalindrome() {
+        assertEquals("oso es palíndroma", practiceOneService.isPalindrome("oso"));
+    }
+
+    @Test
+    void testNotPalindrome() {
+        assertEquals("Juan no es palíndroma", practiceOneService.isPalindrome("Juan"));
+    }
 }
