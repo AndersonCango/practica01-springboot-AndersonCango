@@ -8,36 +8,67 @@ body {
   align-content: center;
 }
 
-.calculator-form {
+h1,
+h3 {
+  color: rgb(166, 0, 0);
+}
+
+h2,
+h4 {
+  color: rgb(35, 3, 141);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+
+section {
+  padding: 0 1rem 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  gap: 1rem;
-  width: 250px;
-  border: 1px solid blue;
+  text-align: center;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
-.values {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  width: 100%;
+button {
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  border: #0054a9;
+  color: white;
+  background-color: #0054a9;
+  margin-top: 1rem;
 }
 
-.values > input {
-  height: 40px;
-  width: 30%;
-  box-sizing: border-box;
+button:hover {
+  background-color: #4a97e5;
 }
 
-.values > select {
-  height: 40px;
-  width: 20%;
-  box-sizing: border-box;
+input {
+  height: 20px;
+  padding: 5px;
+  text-align: center;
 }
 
-.calculator-form > button {
-  width: 70%;
-  height: 30px;
+select,
+option {
+  height: 33px;
+  padding: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

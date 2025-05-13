@@ -28,7 +28,6 @@ public class PracticeOneController {
         return "home";
     }
     
-
     @GetMapping("/practice-01")
     public String practiceOne(Model model) {
         model.addAttribute("calculatorForm", new Calculator());

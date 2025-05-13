@@ -10,61 +10,72 @@
     <h1>Anderson Daniel Cango Samuisa</h1>
     <h2>Metodologías Ágiles</h2>
 
-    <h3>Calculadora Básica</h3>
-    <form
-      th:action="@{/calculate}"
-      th:object="${calculatorForm}"
-      method="post"
-      class="calculator-form"
-    >
-      <main class="values">
-        <input type="number" step="any" th:field="*{a}" />
-        <select th:field="*{op}">
-          <option value="+">+</option>
-          <option value="-">-</option>
-          <option value="*">*</option>
-          <option value="/">/</option>
-        </select>
-        <input type="number" step="any" th:field="*{b}" />
-      </main>
-      <button type="submit">Calcular</button>
-      <h3>Resultado: <span th:text="${result}"></span></h3>
-    </form>
+    <div class="grid-container">
+      <section>
+        <h3>Calculadora Básica</h3>
+        <form
+          th:action="@{/calculate}"
+          th:object="${calculatorForm}"
+          method="post"
+        >
+          <main>
+            <input type="number" step="any" th:field="*{a}" />
+            <select th:field="*{op}">
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+            </select>
+            <input type="number" step="any" th:field="*{b}" />
+          </main>
+          <button type="submit">Calcular</button>
+          <h4><span th:text="${result}"></span></h4>
+        </form>
+      </section>
 
-    <h3>Verficación de número par</h3>
-    <form th:action="@{/pair}" method="post">
-      <main>
-        <input type="number" step="any" name="a" th:value="${a}" />
-        <span th:text="${pairResult}"></span>
-      </main>
-      <button type="submit">Verificar si es par</button>
-    </form>
-    <h3>Cuadrado de un número</h3>
-    <form th:action="@{/square}" method="post">
-      <main>
-        <input
-          type="number"
-          step="any"
-          name="firstNumber"
-          th:value="${firstNumber}"
-        />
-        <input
-          type="number"
-          step="any"
-          name="secondNumber"
-          th:value="${secondNumber}"
-        />
-        <span th:text="${squareResult}"></span>
-      </main>
-      <button type="submit">Verificar si es cuadrado</button>
-    </form>
-    <h3>Palabras Palídromas</h3>
-    <form th:action="@{/palindrome}" method="post">
-      <main>
-        <input type="text" step="any" name="word" th:value="${word}" />
-        <span th:text="${palindromeResult}"></span>
-      </main>
-      <button type="submit">Verificar si es palíndroma</button>
-    </form>
+      <section>
+        <h3>Número par</h3>
+        <form th:action="@{/pair}" method="post">
+          <main>
+            <input type="number" step="any" name="a" th:value="${a}" />
+          </main>
+          <button type="submit">Verificar</button>
+          <h4><span th:text="${pairResult}"></span></h4>
+        </form>
+      </section>
+
+      <section>
+        <h3>Cuadrado de un número</h3>
+        <form th:action="@{/square}" method="post">
+          <main>
+            <input
+              type="number"
+              step="any"
+              name="firstNumber"
+              th:value="${firstNumber}"
+            />
+            <input
+              type="number"
+              step="any"
+              name="secondNumber"
+              th:value="${secondNumber}"
+            />
+          </main>
+          <button type="submit">Verificar</button>
+          <h4><span th:text="${squareResult}"></span></h4>
+        </form>
+      </section>
+
+      <section>
+        <h3>Palabras Palídromas</h3>
+        <form th:action="@{/palindrome}" method="post">
+          <main>
+            <input type="text" step="any" name="word" th:value="${word}" />
+          </main>
+          <button type="submit">Verificar</button>
+          <h4><span th:text="${palindromeResult}"></span></h4>
+        </form>
+      </section>
+    </div>
   </body>
 </html>
