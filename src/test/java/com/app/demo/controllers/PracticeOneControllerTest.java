@@ -46,4 +46,14 @@ public class PracticeOneControllerTest {
                 .andExpect(model().attribute("result", Double.NaN))
                 .andExpect(view().name("practiceone"));
     }
-}
+
+    @Test
+    void testPair() throws Exception {
+        when(practiceOneService.isPair(76)).thenReturn("Es par");
+        mockMvc.perform(post("/pair")
+                .param("a", "76"))
+                .andExpect(status().isOk())
+                .andExpect(model().attribute("pairResult", "Es par"))
+                .andExpect(view().name("practiceone"));
+    }
+ }

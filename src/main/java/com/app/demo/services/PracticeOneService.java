@@ -16,6 +16,6 @@ public class PracticeOneService {
     }
 
     public String isPair(int a) {
-        return a % 2 == 0 ? "Es par" : "No es pár";
+        return a % 2 == 0 ? "Es par" : "No es par";
     }
 }

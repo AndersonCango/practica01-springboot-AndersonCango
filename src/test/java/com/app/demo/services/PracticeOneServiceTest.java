@@ -31,4 +31,14 @@ public class PracticeOneServiceTest {
     void testDivision() {
         assertEquals(2.5, practiceOneService.calculate(10, 4, "/"));
     }
+
+    @Test
+    void testPair(){
+        assertEquals("Es par", practiceOneService.isPair(128));
+    }
+
+    @Test
+    void testUnpair(){
+        assertEquals("No es par", practiceOneService.isPair(333));
+    }
 }
