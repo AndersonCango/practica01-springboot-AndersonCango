@@ -1,5 +1,6 @@
 package com.app.demo.controllers;
 
+import static org.mockito.Answers.values;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -54,6 +55,17 @@ public class PracticeOneControllerTest {
                 .param("a", "76"))
                 .andExpect(status().isOk())
                 .andExpect(model().attribute("pairResult", "Es par"))
+                .andExpect(view().name("practiceone"));
+    }
+
+    @Test
+    void testSquare() throws Exception {
+        when(practiceOneService.squareNumber(6, 36)).thenReturn("36 es cuadrado de 6");
+        mockMvc.perform(post("/square")
+                .param("firstNumber", "6")
+                .param("secondNumber", "36"))
+                .andExpect(status().isOk())
+                .andExpect(model().attribute("squareResult", "36 es cuadrado de 6"))
                 .andExpect(view().name("practiceone"));
     }
  }

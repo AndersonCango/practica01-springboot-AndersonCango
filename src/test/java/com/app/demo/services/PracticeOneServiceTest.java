@@ -41,4 +41,19 @@ public class PracticeOneServiceTest {
     void testUnpair(){
         assertEquals("No es par", practiceOneService.isPair(333));
     }
+
+    @Test
+    void testFirstSquare() {
+        assertEquals("81 es cuadrado de 9", practiceOneService.squareNumber(9, 81));
+    }
+
+    @Test
+    void testSecondSquare() {
+        assertEquals("25 es cuadrado de 5", practiceOneService.squareNumber(25, 5));
+    }
+
+    @Test
+    void testSquare() {
+        assertEquals("8 no es cuadrado de 2", practiceOneService.squareNumber(8, 2));
+    }
 }
