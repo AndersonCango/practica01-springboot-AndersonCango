@@ -416,17 +416,16 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/urandom","-jar","app.jar"]
 
 - Indica que la imagen base será openjdk:21-jdk-slim, una versión ligera de Java 21 JDK. Debido a que Slim tiene un tamaño reducido, ideal para producción, ya que incluye solo lo esencial para ejecutar aplicaciones Java.
 
-- Establece /app como el directorio de trabajo dentro del contenedor. Todas las instrucciones posteriores (COPY, RUN, etc.) se ejecutarán desde aquí, y tu apli-cación se ubicará en esta carpeta.
+- Establece /app como el directorio de trabajo dentro del contenedor. Todas las instrucciones posteriores (COPY, RUN, etc.) se ejecutarán desde aquí, y tu aplicación se ubicará en esta carpeta.
 
 - Copia el archivo JAR generado por Maven desde la máquina local (target/demo-0.0.1-SNAPSHOT.jar) al contenedor. Lo copia con el nombre app.jar dentro del contenedor.
 
-- Exponer el puerto 8080: Esto indica que la aplicación dentro del contenedor es-cucha en el puerto 8080. No abre el puerto por sí solo, pero es útil para documen-tación y herramientas como Docker Compose o Kubernetes.
+- Exponer el puerto 8080: Esto indica que la aplicación dentro del contenedor escucha en el puerto 8080. No abre el puerto por sí solo, pero es útil para documentación y herramientas como Docker Compose o Kubernetes.
 
 - Define el comando que se ejecutará al iniciar el contenedor.
   - java ejecuta la aplicación.
   - -Djava.security.egd=file:/dev/urandom mejora la velocidad de generación de números aleatorios (especialmente en contenedores).
   - -jar app.jar indica que se ejecutará el archivo app.jar como una aplicación Java.
-    s
 
 ### 3️⃣ Generar el contenedor
 
