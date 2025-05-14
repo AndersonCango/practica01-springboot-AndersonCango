@@ -24,7 +24,7 @@ Publicada en Docker Hub para facilitar su despliegue.
 ## 📦 Docker Hub
 
 🔗 Repositorio público:  
-[https://hub.docker.com/repository/docker/danielsamx9/springboot-demoapp](https://hub.docker.com/repository/docker/danielsamx9/springboot-demoapp)
+[https://hub.docker.com/r/danielsamx9/springboot-demoapp](https://hub.docker.com/r/danielsamx9/springboot-demoapp)
 
 ---
 
