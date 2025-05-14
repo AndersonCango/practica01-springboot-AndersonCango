@@ -25,7 +25,6 @@ public class PracticeOneController {
         this.practiceOneService = service;
     }
 
-    // Método reutilizable para cargar todos los formularios al modelo
     public void loadForms(Model model) {
         if (!model.containsAttribute("calculatorForm")) {
             model.addAttribute("calculatorForm", new Calculator());
